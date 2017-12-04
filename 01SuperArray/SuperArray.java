@@ -124,17 +124,18 @@ public class SuperArray{
 	return removedElement;
     }
 //Removes the first occurrence of the specified element from this list if it is present. Shift all the subsequent elements to the left. 
-    public boolean remove(String element){
+
+	 public boolean remove(String element){
 	int total;
+	for(total = 0; data[total] != element; total++){
+	    if(total == size){
+		return false;
+	    }
+	}
 	for(int newtotal = total; total < size; total++){
 	    data[total] = data[total + 1];
 	}
 	size--;
 	return true;
     }
-	for(total = 0; data[total] != element; total++){
-	    if(total == size){
-		return false;
-	    }
-	}
 }
