@@ -96,11 +96,21 @@ public class SuperArray{
     }
     public String toString(){
 	String returnString = "[";
-	for(int i = 0; i + 1 < size; i++){
+	int i = 0; 
+	for(; i + 1 < size; i++){
 	    returnString += data[i] + ",";
 	}
 	returnString += " " + data[i] + "]";
 	return returnString;
+    }
+    
+    public int indexOf(String element){
+		for (int i = 0; i < size; i++){
+	    	if (data[i].equals(element)){
+				return i;
+	    	}
+		}
+		return -1;
     }
     
     public String remove(int i){
