@@ -67,5 +67,34 @@ public class SuperArray{
             size++;
         }
     }
+    public String toString(){
+	String returnString = "[";
+	for(int i = 0; i + 1 < size; i++){
+	    returnString += data[i] + ",";
+	}
+	returnString += " " + data[i] + "]";
+	return returnString;
+    }
+    
+    public String remove(int i){
+	if(i < 0 || i >= size){
+	    System.out.println("Error: Index out of bounds");
+	    return "";
+	}
+	String removedElement = data[i];
+	for(int total = i; total < size; total++){
+	    data[total] = data[total + 1];
+	}
+	size--;
+	return removedElement;
+    }
+    
+     public boolean remove(String element){
+		if (contains(element)){
+	    	remove(indexOf(element));
+	    	return true;
+		}
+		return false;
+    }
 
 }
