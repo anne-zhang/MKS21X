@@ -36,4 +36,22 @@ public class SuperArray{
 	    }
 	    data = newData;
 	}
+	
+	 public String set(int i, String element){
+	if(i < 0 || i >= size){
+	    System.out.println("Error: Index out of bounds");
+	    return "";
+	}
+	String old = data[i];
+	data[i] = element;
+	return old;
+    }
+    
+    public String get(int i){
+	if(i >= size || i < 0){
+	    System.out.println("Error: Index out of bounds");
+	    return "";
+	}
+	return data[i];
+    }
 }
