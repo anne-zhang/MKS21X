@@ -54,7 +54,34 @@ public class SuperArray{
 	}
 	return data[i];
     }
+     public boolean contains(String target){
+	for(int i = 0; i < size; i++){
+	    if(data[i] == target){
+		return true;
+	    }
+	}
+	return false;
+    }
     
+    public int IndexOf(String element){
+	for (int i = 0; i < size; i++){
+	    if(data[i] == element){
+		return i;
+	    }
+	}
+	return -1;
+    }
+    
+    
+    public int lastIndexOf(String element){   
+	for(int i = size; i >= 0; i--){
+	    if(data[i] == element){
+		return i;
+	    }
+	}
+	return -1;
+    }
+
  	public void add(int index, String element){  
         if (index < 0 || index >= size()){
             System.out.println("Error: Index out of bounds");
