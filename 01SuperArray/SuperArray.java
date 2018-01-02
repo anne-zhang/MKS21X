@@ -54,4 +54,18 @@ public class SuperArray{
 	}
 	return data[i];
     }
+    
+ 	public void add(int index, String element){  
+        if (index < 0 || index >= size()){
+            System.out.println("Error: Index out of bounds");
+        }else {
+            newsize();
+            for (int i = size() - 1; i > index -1; i--) {
+                data[i + 1] = get(i);
+            }
+            set(index, element); 
+            size++;
+        }
+    }
+
 }
