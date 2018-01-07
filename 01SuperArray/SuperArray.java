@@ -1,4 +1,3 @@
-
 public class SuperArray{
     private int size;
     private String[] data;
@@ -39,7 +38,7 @@ public class SuperArray{
 	
 	 public String set(int i, String element){
 	if(i < 0 || i >= size){
-	    System.out.println("Error: Index out of bounds");
+	     throw new IndexOutOfBoundsException();
 	    return "";
 	}
 	String old = data[i];
@@ -49,7 +48,7 @@ public class SuperArray{
     
     public String get(int i){
 	if(i >= size || i < 0){
-	    System.out.println("Error: Index out of bounds");
+	     throw new IndexOutOfBoundsException();
 	    return "";
 	}
 	return data[i];
@@ -84,7 +83,7 @@ public class SuperArray{
 
  	public void add(int index, String element){  
         if (index < 0 || index >= size()){
-            System.out.println("Error: Index out of bounds");
+            throw new IndexOutOfBoundsException();
         }else {
             newsize();
             for (int i = size() - 1; i > index -1; i--) {
@@ -115,7 +114,7 @@ public class SuperArray{
     
     public String remove(int i){
 	if(i < 0 || i >= size){
-	    System.out.println("Error: Index out of bounds");
+	    throw new IndexOutOfBoundsException();
 	    return "";
 	}
 	String removedElement = data[i];
