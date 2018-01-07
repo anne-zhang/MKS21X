@@ -16,10 +16,16 @@ public class ReversedCharSequence implements CharSequence{
 	public String toString(){
 		return reversed;
 		}
-	public ReversedCharSequence subSequence(int start, int end){
-		ReversedCharSequence output = new ReversedCharSequence(reversed.substring(start, end));
-		return output;
+	public CharSequence subSequence(int start, int end){
+		return reversed.subSequence(start, end);
 		}
+public static void main(String[]args){	
+ReversedCharSequence s = new ReversedCharSequence("hello world");
+	System.out.println(s.length() + ".... expecting 11");
+	System.out.println(s + ".... expecting dlrow olleh");
+	System.out.println(s.charAt(1) + ".... expecting l");
+	System.out.println(s.subSequence(2, 7) + ".... expecting row o");
+}
 }
 
 
